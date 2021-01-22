@@ -8,8 +8,8 @@ PRIMARY KEY CLUSTERED
      ) ON [PRIMARY]
   );
 
-  insert into Yazarlar(kategori_ID,kategori,durum) Values (1,'Yabancı',1)
-  insert into Yazarlar(kategori_ID,kategori,durum) Values (2,'Yabancı',1)
+  insert into Yazarlar(kategori_ID,kategori,durum) Values (1,'YabancÄ±',1)
+  insert into Yazarlar(kategori_ID,kategori,durum) Values (2,'YabancÄ±',1)
   insert into Yazarlar(kategori_ID,kategori,durum) Values (3,'Turk',1)
   insert into Yazarlar(kategori_ID,kategori,durum) Values (4,'Turk',1)
   insert into Yazarlar(kategori_ID,kategori,durum) Values (5,'Turk',1)
@@ -19,10 +19,10 @@ PRIMARY KEY CLUSTERED
   select * from Yazarlar
 
 
- CREATE TABLE Icerikler(
+CREATE TABLE Icerikler(
 	icerik_ID int  NOT NULL,
 	kategori_ID int NULL,
-	kitap_adı nvarchar(255) NULL,
+	kitap_adÄ± nvarchar(255) NULL,
 	durum bit NULL,
 PRIMARY KEY CLUSTERED
     (
@@ -30,16 +30,17 @@ PRIMARY KEY CLUSTERED
      ) ON [PRIMARY]
   );
 
-  insert into Icerikler(icerik_ID,kategori_ID,kitap_adı) VALUES (1, 1,'Harry Potter')
-  insert into Icerikler(icerik_ID,kategori_ID,kitap_adı) VALUES (2, 2,'Yabancı')
-  insert into Icerikler(icerik_ID,kategori_ID,kitap_adı) VALUES (3, 3,'Tutunamayanlar ')
-  insert into Icerikler(icerik_ID,kategori_ID,kitap_adı) VALUES (4, 4,'Huzur')
-  insert into Icerikler(icerik_ID,kategori_ID,kitap_adı) VALUES (5, 5,'Kara Kitap')
-  insert into Icerikler(icerik_ID,kategori_ID,kitap_adı) VALUES (6, 6,'Aylak Adam')
-  insert into Icerikler(icerik_ID,kategori_ID,kitap_adı) VALUES (7, 7,'İnce Memed')
-  insert into Icerikler(icerik_ID,kategori_ID,kitap_adı) VALUES (8, 8,'Yaban')
-  insert into Icerikler(icerik_ID,kategori_ID,kitap_adı) VALUES (9, 9,'Tütün Zamanı')
-  insert into Icerikler(icerik_ID,kategori_ID,kitap_adı) VALUES (10, 10,'Veda')
+
+  insert into Icerikler(icerik_ID,kategori_ID,kitap_adÄ±) VALUES (1, 1,'Harry Potter')
+  insert into Icerikler(icerik_ID,kategori_ID,kitap_adÄ±) VALUES (2, 2,'YabancÄ±')
+  insert into Icerikler(icerik_ID,kategori_ID,kitap_adÄ±) VALUES (3, 3,'Tutunamayanlar ')
+  insert into Icerikler(icerik_ID,kategori_ID,kitap_adÄ±) VALUES (4, 4,'Huzur')
+  insert into Icerikler(icerik_ID,kategori_ID,kitap_adÄ±) VALUES (5, 5,'Kara Kitap')
+  insert into Icerikler(icerik_ID,kategori_ID,kitap_adÄ±) VALUES (6, 6,'Aylak Adam')
+  insert into Icerikler(icerik_ID,kategori_ID,kitap_adÄ±) VALUES (7, 7,'Ä°nce Memed')
+  insert into Icerikler(icerik_ID,kategori_ID,kitap_adÄ±) VALUES (8, 8,'Yaban')
+  insert into Icerikler(icerik_ID,kategori_ID,kitap_adÄ±) VALUES (9, 9,'TÃ¼tÃ¼n ZamanÄ±')
+  insert into Icerikler(icerik_ID,kategori_ID,kitap_adÄ±) VALUES (10, 10,'Veda')
 
   select * from Icerikler
 
@@ -47,10 +48,10 @@ PRIMARY KEY CLUSTERED
   CREATE TABLE Bilgiler(
 	yorum_ID int  NOT NULL,
 	icerik_ID int NULL,
-	Sayı int null,
+	SayÄ± int null,
 	ad_soyad nvarchar(50) NULL,
 	memleket nvarchar(50) NULL,
-	kitap_baskısı nvarchar(200) NULL,
+	kitap_baskÄ±sÄ± nvarchar(200) NULL,
 	durum bit NULL,
 PRIMARY KEY CLUSTERED
     (
@@ -59,25 +60,25 @@ PRIMARY KEY CLUSTERED
   );
 
 
-  insert into Bilgiler(yorum_ID,icerik_ID,ad_soyad,memleket,kitap_baskısı,Sayı) Values (1, 1,'J. K. Rowling','Almanya','8.baskı','100')
-  insert into Bilgiler(yorum_ID,icerik_ID,ad_soyad,memleket,kitap_baskısı,Sayı) Values (2, 2,'Albert Camus','İspanya','7.baskı','100')
-  insert into Bilgiler(yorum_ID,icerik_ID,ad_soyad,memleket,kitap_baskısı,Sayı) Values (3, 3,'Oguz Atay','Kastamonu','10.baskı','100')
-  insert into Bilgiler(yorum_ID,icerik_ID,ad_soyad,memleket,kitap_baskısı,Sayı) Values (4, 4,'Ahmet Hamdi Tanpınar','Antalya','11.baskı','200')
-  insert into Bilgiler(yorum_ID,icerik_ID,ad_soyad,memleket,kitap_baskısı,Sayı) Values (5, 5,'Orhan Pamuk','Samsun','110.baskı','100')
-  insert into Bilgiler(yorum_ID,icerik_ID,ad_soyad,memleket,kitap_baskısı,Sayı) Values (6, 6,'Yusuf Atılgan','Ordu','72.baskı','200')
-  insert into Bilgiler(yorum_ID,icerik_ID,ad_soyad,memleket,kitap_baskısı,Sayı) Values (7, 7,'Yasar Kemal','Hatay','72.baskı','200')
-  insert into Bilgiler(yorum_ID,icerik_ID,ad_soyad,memleket,kitap_baskısı,Sayı) Values (8, 8,'Yakup Kadri Karaosmanoğlu','Ankara','98.baskı','200')
-  insert into Bilgiler(yorum_ID,icerik_ID,ad_soyad,memleket,kitap_baskısı,Sayı) Values (9, 11,'Necati Cumalı','aksaray','99.baskı','200')
-  insert into Bilgiler(yorum_ID,icerik_ID,ad_soyad,memleket,kitap_baskısı,Sayı) Values (10, 12,'Ayşe Kulin','merssin','100.baskı','200')
+  insert into Bilgiler(yorum_ID,icerik_ID,ad_soyad,memleket,kitap_baskÄ±sÄ±,SayÄ±) Values (1, 1,'J. K. Rowling','Almanya','8.baskÄ±','100')
+  insert into Bilgiler(yorum_ID,icerik_ID,ad_soyad,memleket,kitap_baskÄ±sÄ±,SayÄ±) Values (2, 2,'Albert Camus','Ä°spanya','7.baskÄ±','100')
+  insert into Bilgiler(yorum_ID,icerik_ID,ad_soyad,memleket,kitap_baskÄ±sÄ±,SayÄ±) Values (3, 3,'Oguz Atay','Kastamonu','10.baskÄ±','100')
+  insert into Bilgiler(yorum_ID,icerik_ID,ad_soyad,memleket,kitap_baskÄ±sÄ±,SayÄ±) Values (4, 4,'Ahmet Hamdi TanpÄ±nar','Antalya','11.baskÄ±','200')
+  insert into Bilgiler(yorum_ID,icerik_ID,ad_soyad,memleket,kitap_baskÄ±sÄ±,SayÄ±) Values (5, 5,'Orhan Pamuk','Samsun','110.baskÄ±','100')
+  insert into Bilgiler(yorum_ID,icerik_ID,ad_soyad,memleket,kitap_baskÄ±sÄ±,SayÄ±) Values (6, 6,'Yusuf AtÄ±lgan','Ordu','72.baskÄ±','200')
+  insert into Bilgiler(yorum_ID,icerik_ID,ad_soyad,memleket,kitap_baskÄ±sÄ±,SayÄ±) Values (7, 7,'Yasar Kemal','Hatay','72.baskÄ±','200')
+  insert into Bilgiler(yorum_ID,icerik_ID,ad_soyad,memleket,kitap_baskÄ±sÄ±,SayÄ±) Values (8, 8,'Yakup Kadri KaraosmanoÄŸlu','Ankara','98.baskÄ±','200')
+  insert into Bilgiler(yorum_ID,icerik_ID,ad_soyad,memleket,kitap_baskÄ±sÄ±,SayÄ±) Values (9, 11,'Necati CumalÄ±','aksaray','99.baskÄ±','200')
+  insert into Bilgiler(yorum_ID,icerik_ID,ad_soyad,memleket,kitap_baskÄ±sÄ±,SayÄ±) Values (10, 12,'AyÅŸe Kulin','merssin','100.baskÄ±','200')
 
   select * from Bilgiler
 
 
 
-  CREATE TABLE Doğum_yılları(
+  CREATE TABLE DoÄŸum_yÄ±llarÄ±(
 	bilgi_tablo int NOT NULL,
-	doğum_ıd int NULL,
-	doğum_tarih nvarchar(250) NULL,
+	doÄŸum_Ä±d int NULL,
+	doÄŸum_tarih nvarchar(250) NULL,
 	bolum nvarchar(250) NULL,
 PRIMARY KEY CLUSTERED
     (
@@ -85,29 +86,29 @@ PRIMARY KEY CLUSTERED
      ) ON [PRIMARY]
   );
 
-  insert into Doğum_yılları(bilgi_tablo,doğum_ıd,doğum_tarih) VALUES (1, 1,'31 Temmuz 1965')
-  insert into Doğum_yılları(bilgi_tablo,doğum_ıd,doğum_tarih) VALUES (2, 2,'7 Kasım 1913')
-  insert into Doğum_yılları(bilgi_tablo,doğum_ıd,doğum_tarih) VALUES (3, 3,'12 Ekim 1934')
-  insert into Doğum_yılları(bilgi_tablo,doğum_ıd,doğum_tarih) VALUES (4, 4,'23 Haziran 1901')
-  insert into Doğum_yılları(bilgi_tablo,doğum_ıd,doğum_tarih) VALUES (5, 5,'7 Haziran 1952')
-  insert into Doğum_yılları(bilgi_tablo,doğum_ıd,doğum_tarih) VALUES (6, 6,'27 Haziran 1921')
-  insert into Doğum_yılları(bilgi_tablo,doğum_ıd,doğum_tarih) VALUES (7, 7,'6 Ekim 1923')
-  insert into Doğum_yılları(bilgi_tablo,doğum_ıd,doğum_tarih) VALUES (8, 8,'27 Mart 1889')
-  insert into Doğum_yılları(bilgi_tablo,doğum_ıd,doğum_tarih) VALUES (9, 15,'1 Mart 1008')
-  insert into Doğum_yılları(bilgi_tablo,doğum_ıd,doğum_tarih) VALUES (10, 16,'22 Mart 1888')
+  insert into DoÄŸum_yÄ±llarÄ±(bilgi_tablo,doÄŸum_Ä±d,doÄŸum_tarih) VALUES (1, 1,'31 Temmuz 1965')
+  insert into DoÄŸum_yÄ±llarÄ±(bilgi_tablo,doÄŸum_Ä±d,doÄŸum_tarih) VALUES (2, 2,'7 KasÄ±m 1913')
+  insert into DoÄŸum_yÄ±llarÄ±(bilgi_tablo,doÄŸum_Ä±d,doÄŸum_tarih) VALUES (3, 3,'12 Ekim 1934')
+  insert into DoÄŸum_yÄ±llarÄ±(bilgi_tablo,doÄŸum_Ä±d,doÄŸum_tarih) VALUES (4, 4,'23 Haziran 1901')
+  insert into DoÄŸum_yÄ±llarÄ±(bilgi_tablo,doÄŸum_Ä±d,doÄŸum_tarih) VALUES (5, 5,'7 Haziran 1952')
+  insert into DoÄŸum_yÄ±llarÄ±(bilgi_tablo,doÄŸum_Ä±d,doÄŸum_tarih) VALUES (6, 6,'27 Haziran 1921')
+  insert into DoÄŸum_yÄ±llarÄ±(bilgi_tablo,doÄŸum_Ä±d,doÄŸum_tarih) VALUES (7, 7,'6 Ekim 1923')
+  insert into DoÄŸum_yÄ±llarÄ±(bilgi_tablo,doÄŸum_Ä±d,doÄŸum_tarih) VALUES (8, 8,'27 Mart 1889')
+  insert into DoÄŸum_yÄ±llarÄ±(bilgi_tablo,doÄŸum_Ä±d,doÄŸum_tarih) VALUES (9, 15,'1 Mart 1008')
+  insert into DoÄŸum_yÄ±llarÄ±(bilgi_tablo,doÄŸum_Ä±d,doÄŸum_tarih) VALUES (10, 16,'22 Mart 1888')
 
-  select * from Doğum_yılları
+    select * from DoÄŸum_yÄ±llarÄ±
 
 
 
 
   SELECT
-D.doğum_tarih,
+D.doÄŸum_tarih,
 K.kategori,
-I.kitap_adı,
+I.kitap_adÄ±,
 Y.ad_soyad,
 Y.memleket,
-Y.kitap_baskısı
+Y.kitap_baskÄ±sÄ±
 FROM
 Yazarlar AS K
 INNER JOIN
@@ -119,20 +120,21 @@ Bilgiler AS Y
 ON
 I.icerik_ID = Y.icerik_ID
 INNER JOIN
-Doğum_yılları AS D
+DoÄŸum_yÄ±llarÄ± AS D
 ON
-I.kategori_ID = D.doğum_ıd
+I.kategori_ID = D.doÄŸum_Ä±d
+
 
 
 
 
 SELECT
-D.doğum_tarih,
+D.doÄŸum_tarih,
 K.kategori,
-I.kitap_adı,
+I.kitap_adÄ±,
 Y.ad_soyad,
 Y.memleket,
-Y.kitap_baskısı
+Y.kitap_baskÄ±sÄ±
 FROM
 Yazarlar AS K
 left JOIN
@@ -144,18 +146,18 @@ Bilgiler AS Y
 ON
 I.icerik_ID = Y.icerik_ID
 left JOIN
-Doğum_yılları AS D
+DoÄŸum_yÄ±llarÄ± AS D
 ON
-I.kategori_ID = D.doğum_ıd
+I.kategori_ID = D.doÄŸum_Ä±d
 
 
 SELECT
-D.doğum_tarih,
+D.doÄŸum_tarih,
 K.kategori,
-I.kitap_adı,
+I.kitap_adÄ±,
 Y.ad_soyad,
 Y.memleket,
-Y.kitap_baskısı
+Y.kitap_baskÄ±sÄ±
 FROM
 Yazarlar AS K
 RIGHT JOIN
@@ -167,37 +169,37 @@ Bilgiler AS Y
 ON
 I.icerik_ID = Y.icerik_ID
 RIGHT JOIN
-Doğum_yılları AS D
+DoÄŸum_yÄ±llarÄ± AS D
 ON
-I.kategori_ID = D.doğum_ıd
+I.kategori_ID = D.doÄŸum_Ä±d
 
 
 select * from Bilgiler
 
-Create Proc spYeniKayıt
+Create Proc spYeniKayÄ±t
 (
 @yorum_ID int,
 @icerik_ID int,
-@Sayı int,
+@SayÄ± int,
 @ad_soyad nvarchar(50),
 @memleket nvarchar(50),
-@kitap_baskısı nvarchar(200)
+@kitap_baskÄ±sÄ± nvarchar(200)
 )
 as
 begin 
-       insert into Bilgiler(yorum_ID,icerik_ID,Sayı,ad_soyad,memleket,kitap_baskısı) Values (@yorum_ID,@icerik_ID,@Sayı,@ad_soyad,@memleket,@kitap_baskısı)
+       insert into Bilgiler(yorum_ID,icerik_ID,SayÄ±,ad_soyad,memleket,kitap_baskÄ±sÄ±) Values (@yorum_ID,@icerik_ID,@SayÄ±,@ad_soyad,@memleket,@kitap_baskÄ±sÄ±)
 end
 
-exec spYeniKayıt
-'52' , '520' , '2002' , 'Arthur Rimbaud' , 'Fransa' , '1907.baskı'
-exec spYeniKayıt
-'91' , '272' , '1796' , 'Voltaire' , 'Fransa' , '963.baskı'
-exec spYeniKayıt
-'46' , '984' , '1927' , 'Samuel Beckett' , 'Irlanda' , '342.baskı'
-exec spYeniKayıt
-'82' , '71' , '1907' , 'Franz Kafka' , 'Almanya' , '61.baskı'
-exec spYeniKayıt
-'62' , '114' , '1400' , 'Marcel Proust' , 'Romanya' , '294.baskı'
+exec spYeniKayÄ±t
+'52' , '520' , '2002' , 'Arthur Rimbaud' , 'Fransa' , '1907.baskÄ±'
+exec spYeniKayÄ±t
+'91' , '272' , '1796' , 'Voltaire' , 'Fransa' , '963.baskÄ±'
+exec spYeniKayÄ±t
+'46' , '984' , '1927' , 'Samuel Beckett' , 'Irlanda' , '342.baskÄ±'
+exec spYeniKayÄ±t
+'82' , '71' , '1907' , 'Franz Kafka' , 'Almanya' , '61.baskÄ±'
+exec spYeniKayÄ±t
+'62' , '114' , '1400' , 'Marcel Proust' , 'Romanya' , '294.baskÄ±'
 
 
 select * from Bilgiler
@@ -207,7 +209,7 @@ select * from Bilgiler
 Create Proc spOLSUN
 AS 
 BEGIN
-      Select B.yorum_ID,B.icerik_ID,B.Sayı,B.ad_soyad,B.memleket,B.kitap_baskısı, D.bilgi_tablo,D.doğum_ıd,D.doğum_tarih from Bilgiler B inner join Doğum_yılları D on B.yorum_ID = D.bilgi_tablo
+      Select B.yorum_ID,B.icerik_ID,B.SayÄ±,B.ad_soyad,B.memleket,B.kitap_baskÄ±sÄ±, D.bilgi_tablo,D.doÄŸum_Ä±d,D.doÄŸum_tarih from Bilgiler B inner join DoÄŸum_yÄ±llarÄ± D on B.yorum_ID = D.bilgi_tablo
 END 
 
 Exec spOLSUN
@@ -224,7 +226,7 @@ DECLARE @fillfactor INT
 SET @fillfactor = 30
 DECLARE DatabaseCursor CURSOR FOR
 SELECT name FROM master.dbo.sysdatabases
-WHERE name  IN ('FURKAN')
+WHERE name  IN ('SARI_ELMAS')
 ORDER BY 1 
 OPEN DatabaseCursor 
 FETCH NEXT FROM DatabaseCursor INTO @Database
