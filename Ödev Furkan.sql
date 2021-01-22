@@ -226,7 +226,7 @@ DECLARE @fillfactor INT
 SET @fillfactor = 30
 DECLARE DatabaseCursor CURSOR FOR
 SELECT name FROM master.dbo.sysdatabases
-WHERE name  IN ('SARI_ELMAS')
+WHERE name  IN ('FURKAN')
 ORDER BY 1 
 OPEN DatabaseCursor 
 FETCH NEXT FROM DatabaseCursor INTO @Database
